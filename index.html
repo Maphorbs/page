@@ -76,7 +76,7 @@
     start = document.getElementById('start'),
     stop = document.getElementById('stop'),
     clear = document.getElementById('clear'),
-    seconds = 0, minutes = 0, hours = 0,
+    seconds = 0, minutes = 0,
     t;
 
 function add() {
@@ -86,11 +86,10 @@ function add() {
         minutes++;
         if (minutes >= 60) {
             minutes = 0;
-            hours++;
         }
     }
     
-    h1.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    h1.textContent = (minutes ? (minutes > 2 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
 
     timer();
 }
