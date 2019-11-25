@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,9 +13,9 @@
     <div id="collage">
         <h2 style="color:#222; font-weight:bold; font-size:30px;">DRE EMPIRE</h2>
         <hr />
-        <div id="playPanel" style="padding:10px;display:none;">
+        <div id="playPanel" style="padding:5px;display:none;">
 
-            <div style="display:inline-block; margin:auto; width:120%; vertical-align:top;">
+            <div style="display:inline-block; margin:auto; width:100%; vertical-align:top;">
                 <ul id="sortable" class="sortable"></ul>
 				
                 <div id="actualImageBox">
@@ -25,9 +25,9 @@
                     <img id="actualImage" />
                     <div>Re-arrange to create a picture like this.</div>
                     <p id="levelPanel">
-                        <input type="radio" name="level" id="hard" checked="checked" value="9" /> <label for="hard">Puzzle Picture</label>
+                        <input type="radio" name="level" id="hard" checked="checked" value="6" /> <label for="hard">Puzzle Picture</label>
                     </p>
-					<div style="display:inline-block; margin:auto; width:120%; vertical-align:top;">
+					<div style="display:inline-block; margin:auto; width:100%; vertical-align:top;">
 					<div>
                 </div>
             </div>
@@ -76,25 +76,25 @@
     start = document.getElementById('start'),
     stop = document.getElementById('stop'),
     clear = document.getElementById('clear'),
-    seconds = 0, minutes = 0,
+    seconds = 10, minutes = 1,
     t;
 
 function add() {
     seconds++;
-    if (seconds >= 10) {
+    if (seconds >= 60) {
         seconds = 0;
         minutes++;
-        if (minutes >= 10) {
+        if (minutes >= 60) {
             minutes = 0;
         }
     }
     
-    h1.textContent = (minutes ? (minutes > 2 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 2 ? seconds : "0" + seconds);
+    h1.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
 
     timer();
 }
 function timer() {
-    t = setTimeout(add, 1);
+    t = setTimeout(add, 10);
 }
 timer();
 
